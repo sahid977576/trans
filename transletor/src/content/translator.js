@@ -1,1 +1,0 @@
-function requestTranslation(texts, target, mode) { return new Promise(resolve => chrome.runtime.sendMessage({ type: 'TRANSLATE_BATCH', texts, target, mode }, response => { const error = chrome.runtime.lastError; resolve(error ? { error: 'The extension connection is unavailable.' } : response); })); }
