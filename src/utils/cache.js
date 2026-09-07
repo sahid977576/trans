@@ -1,0 +1,3 @@
+const CACHE_LIMIT = 500;
+async function cacheGet(key) { const data = await chrome.storage.local.get('translationCache'); return data.translationCache?.[key] || null; }
+async function cachePut(key, value) { const data = await chrome.storage.local.get('translationCache'); const cache = data.translationCache || {}; cache[key] = value; const keys = Object.keys(cache); if (keys.length > CACHE_LIMIT) keys.slice(0, keys.length - CACHE_LIMIT).forEach(k => delete cache[k]); await chrome.storage.local.set({ translationCache: cache }); }
