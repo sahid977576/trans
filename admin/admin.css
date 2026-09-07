@@ -11,7 +11,8 @@ table { width: 100%; border-collapse: collapse; font-size: 12px; } th { color: v
 @media (max-width: 900px) { .app-shell { grid-template-columns: 205px 1fr; } .stats { grid-template-columns: repeat(3, 1fr); } .main { padding: 24px; } }
 @media (max-width: 650px) { .app-shell { display: block; } .sidebar { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); } nav { grid-template-columns: repeat(3, 1fr); } .logout { margin-top: 12px; } .stats { grid-template-columns: repeat(2, 1fr); } .topbar { align-items: start; flex-direction: column; gap: 12px; } .form-grid { display: block; } .filters { grid-template-columns: 1fr; } table { display: block; overflow-x: auto; white-space: nowrap; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
-.auth-logo { width: min(250px, 100%); height: auto; border-radius: 20px; object-fit: contain; }
+.auth-card { padding: 30px; }
+.auth-logo { width: min(210px, 100%); max-height: 118px; height: auto; margin-bottom: 14px; border-radius: 18px; object-fit: contain; }
 #createdKey { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 15px 0 0; padding: 12px; border: 1px solid #6de4bd44; border-radius: 10px; color: var(--green); background: #6de4bd0d; white-space: normal; }
 #createdKey code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13px; }
 [hidden] { display: none !important; }
