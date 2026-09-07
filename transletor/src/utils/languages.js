@@ -1,0 +1,4 @@
+const LANGUAGES = [
+  ['en', 'English'], ['bn', 'Bengali'], ['hi', 'Hindi'], ['ur', 'Urdu'], ['ar', 'Arabic'], ['es', 'Spanish'], ['fr', 'French'], ['de', 'German'], ['pt', 'Portuguese'], ['it', 'Italian'], ['ru', 'Russian'], ['zh-CN', 'Chinese Simplified'], ['zh-TW', 'Chinese Traditional'], ['ja', 'Japanese'], ['ko', 'Korean'], ['tr', 'Turkish'], ['nl', 'Dutch'], ['pl', 'Polish'], ['id', 'Indonesian'], ['vi', 'Vietnamese'], ['th', 'Thai'], ['fa', 'Persian'], ['pa', 'Punjabi'], ['mr', 'Marathi'], ['ta', 'Tamil'], ['te', 'Telugu'], ['gu', 'Gujarati'], ['kn', 'Kannada'], ['ml', 'Malayalam'], ['or', 'Odia'], ['as', 'Assamese']
+].map(([code, name]) => ({ code, name, providerCode: code, aiName: name }));
+if (typeof globalThis !== 'undefined') globalThis.LANGUAGES = LANGUAGES;

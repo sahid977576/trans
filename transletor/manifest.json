@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Website Translator",
+  "version": "1.0.0",
+  "description": "Translate webpages safely in place with free or optional AI translation.",
+  "action": { "default_title": "Smart Website Translator", "default_popup": "src/popup/popup.html", "default_icon": { "16": "assets/icon16.png", "48": "assets/icon48.png", "128": "assets/icon128.png" } },
+  "permissions": ["storage", "contextMenus", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>", "https://translate.googleapis.com/*", "https://api.openai.com/*"],
+  "background": { "service_worker": "src/background/service-worker.js" },
+  "content_scripts": [{ "matches": ["<all_urls>"], "js": ["src/utils/languages.js", "src/content/languageDetector.js", "src/content/content.js"], "css": ["src/content/content.css"], "run_at": "document_idle", "all_frames": true }],
+  "options_page": "src/options/options.html",
+  "commands": { "translate-page": { "suggested_key": { "default": "Ctrl+Shift+T", "mac": "MacCtrl+Shift+T" }, "description": "Translate the current webpage" } },
+  "icons": { "16": "assets/icon16.png", "48": "assets/icon48.png", "128": "assets/icon128.png" },
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'self'" }
+}

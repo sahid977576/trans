@@ -1,0 +1,1 @@
+function selectionText() { return window.getSelection()?.toString().trim() || ''; }

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Smart Website Translator Settings</title>
+  <link rel="icon" type="image/png" href="../../assets/icon16.png">
+  <link rel="stylesheet" href="../styles/common.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="options">
+    <header class="brand">
+      <div class="logo brand-logo"><img src="../../assets/brand/smart-website-translator-mark-128.png" alt="Smart Website Translator"></div>
+      <div><h1>Smart Website Translator</h1><p class="muted">Smart translation for the modern web.</p></div>
+    </header>
+    <section class="card">
+      <h2>Translation</h2>
+      <label for="defaultLanguage">Default language</label>
+      <select id="defaultLanguage"></select>
+      <label>Default mode</label>
+      <div class="segmented"><label><input type="radio" name="defaultMode" value="free"><span>Free</span></label><label><input type="radio" name="defaultMode" value="ai"><span>AI</span></label></div>
+      <label class="check"><input id="autoTranslate" type="checkbox"> Automatically translate selected websites</label>
+      <label class="check"><input id="dynamicContent" type="checkbox" checked> Translate dynamically loaded content</label>
+    </section>
+    <section class="card">
+      <h2>AI translation</h2>
+      <p class="hint">Your key is stored in Chrome Sync for personal use. A client-side key can be exposed, so use a backend proxy before public distribution.</p>
+      <div class="key-row"><input id="openaiKey" type="password" autocomplete="off" placeholder="sk-..."><button class="button secondary" id="showKey">Show</button></div>
+      <div class="actions"><button class="button primary" id="saveKey">Save key</button><button class="button danger" id="removeKey">Remove</button><button class="button secondary" id="testKey">Test</button></div>
+    </section>
+    <section class="card">
+      <h2>Appearance and advanced</h2>
+      <label for="theme">Theme</label>
+      <select id="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
+      <label for="batchSize">Translation batch size</label>
+      <input id="batchSize" type="number" min="1" max="50">
+      <label for="timeout">Translation timeout (milliseconds)</label>
+      <input id="timeout" type="number" min="3000" max="60000">
+    </section>
+    <p id="status" class="status" role="status"></p>
+  </main>
+  <script src="../utils/languages.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+function makeCacheKey(originalText, source, target, mode, provider = mode === 'ai' ? 'openai:gpt-4o-mini' : 'free:google') { return JSON.stringify({ originalText, source: source || 'auto', target, provider, mode }); }
+function isRestrictedUrl(url = '') { return /^(chrome|edge|about|moz-extension|chrome-extension):/i.test(url) || /chrome.google.com\/webstore/i.test(url); }
+function sendTabMessage(tabId, message) { return new Promise(resolve => chrome.tabs.sendMessage(tabId, message, response => { const error = chrome.runtime.lastError; resolve(error ? { error: error.message } : response); })); }

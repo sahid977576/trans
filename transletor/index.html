@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Translate any website naturally with Smart Website Translator.">
+  <title>Smart Website Translator | Translate the web</title>
+  <link rel="icon" type="image/png" href="assets/brand/smart-website-translator-mark-128.png">
+  <style>
+    :root { color-scheme: dark; --bg: #07101c; --panel: rgba(16, 31, 47, .78); --line: #9bd9d533; --text: #f4fbfa; --muted: #a8c4c8; --mint: #79e2c7; --orange: #ffb36b; --blue: #378de9; }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; margin: 0; color: var(--text); background: radial-gradient(circle at 15% 10%, #2e95a52b, transparent 32%), radial-gradient(circle at 90% 80%, #ff9b421c, transparent 30%), linear-gradient(135deg, #07101c, #0c2030 55%, #101b27); font-family: Georgia, "Times New Roman", serif; }
+    body::before { position: fixed; inset: 0; z-index: -1; background: linear-gradient(#b3eef80a 1px, transparent 1px), linear-gradient(90deg, #b3eef80a 1px, transparent 1px); background-size: 42px 42px; content: ""; mask-image: linear-gradient(to bottom, #000, transparent 80%); }
+    .site-header { display: flex; align-items: center; justify-content: space-between; width: min(1160px, calc(100% - 40px)); margin: auto; padding: 24px 0; }
+    .brand-link { display: flex; align-items: center; gap: 12px; color: var(--text); font-size: 16px; font-weight: 700; text-decoration: none; }
+    .brand-link img { width: 38px; height: 38px; border-radius: 11px; }
+    .admin-link { padding: 10px 15px; border: 1px solid var(--line); border-radius: 9px; color: var(--text); font-family: "Segoe UI", sans-serif; font-size: 13px; text-decoration: none; }
+    .admin-link:hover { border-color: var(--mint); color: var(--mint); }
+    .hero { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: clamp(36px, 8vw, 100px); width: min(1160px, calc(100% - 40px)); margin: auto; padding: clamp(70px, 12vh, 150px) 0 90px; }
+    .eyebrow { margin: 0 0 16px; color: var(--mint); font: 800 11px/1.2 "Segoe UI", sans-serif; letter-spacing: .16em; }
+    h1 { max-width: 700px; margin: 0; font-size: clamp(50px, 8vw, 92px); font-weight: 500; line-height: .94; letter-spacing: -.045em; }
+    .hero-copy { max-width: 580px; margin: 26px 0 30px; color: var(--muted); font: 18px/1.65 "Segoe UI", sans-serif; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border: 1px solid transparent; border-radius: 9px; color: #081722; background: var(--mint); font: 800 14px "Segoe UI", sans-serif; text-decoration: none; }
+    .button:hover { background: #a4f1dd; transform: translateY(-2px); }
+    .button.secondary { border-color: var(--line); color: var(--text); background: transparent; }
+    .hero-art { position: relative; min-height: 350px; padding: 42px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(145deg, #14364b99, #122131bb); box-shadow: 20px 20px 0 #ffb36b12, 0 30px 70px #0005; transform: rotate(2deg); }
+    .hero-art::before { position: absolute; top: 28px; right: 28px; width: 11px; height: 11px; border-radius: 50%; background: var(--orange); box-shadow: -22px 0 var(--mint), -44px 0 #fff8; content: ""; }
+    .quote { margin: 62px 0 28px; color: #e8faf7; font-size: clamp(25px, 3vw, 38px); line-height: 1.08; }
+    .languages { display: flex; flex-wrap: wrap; gap: 8px; font: 12px "Segoe UI", sans-serif; }
+    .languages span { padding: 8px 10px; border: 1px solid #9bd9d52e; border-radius: 99px; color: var(--mint); background: #79e2c70d; }
+    .section { width: min(1160px, calc(100% - 40px)); margin: auto; padding: 26px 0 100px; }
+    .trial { display: grid; grid-template-columns: .9fr 1.1fr; gap: 50px; padding: 42px; border-top: 1px solid var(--line); }
+    .trial h2 { margin: 0; font-size: clamp(30px, 4vw, 48px); font-weight: 500; }
+    .trial p { color: var(--muted); font: 15px/1.6 "Segoe UI", sans-serif; }
+    form { display: grid; gap: 12px; }
+    input { width: 100%; min-height: 48px; padding: 0 14px; border: 1px solid var(--line); border-radius: 8px; color: var(--text); background: #07151fd9; font: 14px "Segoe UI", sans-serif; }
+    input:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
+    form button { min-height: 48px; border: 0; border-radius: 8px; color: #081722; background: var(--orange); font: 800 14px "Segoe UI", sans-serif; cursor: pointer; }
+    form button:hover { background: #ffc98f; }
+    form button:disabled { cursor: wait; opacity: .6; }
+    .status { min-height: 20px; margin: 3px 0 0; color: var(--muted); font: 13px "Segoe UI", sans-serif; }
+    .status.success { color: var(--mint); } .status.error { color: #ff9e9e; }
+    .key { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px; border: 1px solid #79e2c755; border-radius: 8px; color: var(--mint); background: #79e2c70d; font: 700 14px Consolas, monospace; word-break: break-all; }
+    .key button { flex: 0 0 auto; min-height: 32px; padding: 0 10px; border: 1px solid var(--line); border-radius: 6px; color: var(--text); background: transparent; cursor: pointer; }
+    footer { width: min(1160px, calc(100% - 40px)); margin: auto; padding: 24px 0 34px; border-top: 1px solid var(--line); color: #7f9ca2; font: 12px "Segoe UI", sans-serif; }
+    @media (max-width: 760px) { .hero, .trial { grid-template-columns: 1fr; } .hero { padding-top: 70px; } .hero-art { min-height: 280px; } .trial { padding: 30px 0; } }
+    @media (prefers-reduced-motion: reduce) { .button:hover { transform: none; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand-link" href="./"><img src="assets/brand/smart-website-translator-mark-128.png" alt=""><span>Smart Website Translator</span></a>
+    <a class="admin-link" href="admin/index.html">Admin login</a>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">TRANSLATE WITHOUT LEAVING THE PAGE</p>
+        <h1>The web, in your language.</h1>
+        <p class="hero-copy">Smart Website Translator translates visible webpage text in place, so layouts, links, controls, and the way you browse stay exactly where you expect them.</p>
+        <div class="actions"><a class="button" href="transletor.zip" download>Download extension</a><a class="button secondary" href="#trial">Start a free trial</a></div>
+      </div>
+      <div class="hero-art"><p class="quote">“Every page should feel native.”</p><div class="languages"><span>English</span><span>বাংলা</span><span>हिन्दी</span><span>Español</span><span>日本語</span><span>العربية</span></div></div>
+    </section>
+    <section class="section" id="trial">
+      <div class="trial"><div><p class="eyebrow">TRY IT FOR 10 MINUTES</p><h2>See the difference on your next page.</h2><p>Enter your name and email to generate one temporary activation key. The key expires automatically after 10 minutes.</p></div><div><form id="trialForm"><input id="trialName" name="name" placeholder="Your name" autocomplete="name" required><input id="trialEmail" name="email" type="email" placeholder="Email address" autocomplete="email" required><button type="submit">Generate trial key</button><p class="status" id="trialStatus" role="status"></p></form><div class="key" id="trialKey" hidden><span id="trialKeyValue"></span><button id="copyKey" type="button">Copy</button></div></div></div>
+    </section>
+  </main>
+  <footer>Smart Website Translator · Translate freely, browse naturally.</footer>
+  <script>
+    const licenseApi = 'https://ilkfhvychrclgsibqegb.supabase.co/functions/v1';
+    const form = document.querySelector('#trialForm');
+    const status = document.querySelector('#trialStatus');
+    const keyBox = document.querySelector('#trialKey');
+    const keyValue = document.querySelector('#trialKeyValue');
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      const button = form.querySelector('button');
+      button.disabled = true;
+      status.className = 'status';
+      status.textContent = 'Generating your trial key...';
+      keyBox.hidden = true;
+      try {
+        const response = await fetch(`${licenseApi}/create-trial`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ customerName: form.name.value, customerEmail: form.email.value }) });
+        const result = await response.json();
+        if (response.status === 404) throw new Error('Trial service is not deployed yet.');
+        if (!response.ok) throw new Error(result.error || 'Could not generate a trial key.');
+        keyValue.textContent = result.activationKey;
+        keyBox.hidden = false;
+        status.className = 'status success';
+        status.textContent = `Expires at ${new Date(result.expiresAt).toLocaleTimeString()}. Enter this key in the extension.`;
+      } catch (error) { status.className = 'status error'; status.textContent = error.message; }
+      button.disabled = false;
+    });
+    document.querySelector('#copyKey').addEventListener('click', async () => { await navigator.clipboard.writeText(keyValue.textContent); document.querySelector('#copyKey').textContent = 'Copied'; });
+  </script>
+</body>
+</html>
